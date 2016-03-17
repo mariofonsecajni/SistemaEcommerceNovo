@@ -35,6 +35,18 @@ public class ClienteDaoImpl implements ClienteDao {
 		cliente = entityManager.merge(cliente);
 		entityManager.remove(cliente);
 	}
-	
+
+	@Override
+	@Transactional
+	public Cliente salvar(Cliente cliente) {
+		 entityManager.persist(cliente);	
+		return cliente;
+	}
+	@Override
+	@Transactional
+	public void atualizar(Cliente cliente) {
+		cliente = entityManager.merge(cliente);	
+		entityManager.persist(cliente);
+	}
 
 }

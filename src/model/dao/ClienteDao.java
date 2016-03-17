@@ -10,4 +10,10 @@ public interface ClienteDao {
 	
 	public void excluir(Cliente cliente);
 
+	
+
+	Cliente salvar(Cliente cliente);
+
+	void atualizar(Cliente cliente);
+
 }
